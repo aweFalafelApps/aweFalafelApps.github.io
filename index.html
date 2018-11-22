@@ -1,32 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
-    <meta name="theme-color" content="#db5945">
-    <title>ProgressiveBlazor</title>
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
-    <link href="manifest.json" rel="manifest" type="application/manifest+json" />
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function () {
-                navigator.serviceWorker.register('/serviceworker.js').then(function (registration) {
-                    // Registration was successful
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function (err) {
-                    // registration failed :(
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-    </script>
+    <title>RandomImage</title>
+    <base href="/" />
+    <link href="https://unpkg.com/normalize.css@latest/normalize.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link href="css/dark.css" rel="stylesheet" id="theme-css" />
 </head>
-
-<body>
-    <app>Loading...</app>
+<body class="mdc-typography mdc-theme--background mdc-theme--on-surface">
+    <app>
+        <div class="ri-body">
+            <p class="mdc-typography--subtitle1">Loading...</p>
+        </div>
+    </app>
     <script type="text/javascript">
         // Single Page Apps for GitHub Pages
         // https://github.com/rafrex/spa-github-pages
@@ -56,8 +46,16 @@
             }
         }(window.location))
     </script>
-    <script src="_framework/blazor.js" main="ProgressiveBlazor.dll" entrypoint="ProgressiveBlazor.Program::Main"
-        references="Microsoft.AspNetCore.Blazor.Browser.dll,Microsoft.AspNetCore.Blazor.dll,Microsoft.Extensions.DependencyInjection.Abstractions.dll,Microsoft.Extensions.DependencyInjection.dll,mscorlib.dll,netstandard.dll,System.Core.dll,System.dll,System.Net.Http.dll"
-        linker-enabled="true"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        function init() {
+            const drawer = mdc.drawer.MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
+            document.getElementById('drawer-toggle').onclick = function () {
+                drawer.open = true;
+            }
+
+            window.mdc.autoInit();
+        }
+    </script>
 </body>
 </html>
