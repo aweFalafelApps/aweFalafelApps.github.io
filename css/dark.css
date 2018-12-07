@@ -8565,57 +8565,28 @@ a.mdc-list-item {
   text-transform: uppercase;
 }
 
-html, body, .ri-body {
+html, body, .ri-body__full {
   height: 100%;
 }
 
-.ri-body {
+.ri-body__full {
   display: -webkit-flexbox;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  justify-content: center;
 }
 
-.ri-drawer__toggle {
-  position: absolute;
+.ri-centered {
+  margin: auto;
 }
 
-.ri-drawer__content {
-  flex-shrink: 0;
-  padding: 0px 16px;
-}
-
-.ri-drawer__row {
-  display: flex;
-}
-
-.ri-drawer__field {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.ri-drawer__field .mdc-text-field::before, .ri-drawer__field .mdc-text-field::after {
-  content: none;
-}
-
-.ri-drawer__field + .ri-drawer__field {
-  margin-left: 16px;
+.ri-top-app-bar {
+  background-color: transparent;
 }
 
 .ri-svg {
   height: 100%;
   width: 100%;
-}
-
-.ri-shape {
-  fill: #5c6bc0;
-  stroke: #ffca28;
 }
 
 /*# sourceMappingURL=dark.css.map */
