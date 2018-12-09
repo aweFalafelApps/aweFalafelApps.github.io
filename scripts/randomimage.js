@@ -2,15 +2,17 @@ function riInit() {
     window.mdc.autoInit();
 }
 function riSaveImage(svg, canvas) {
+    var context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
     var domUrl = window.URL || window.webkitURL || window;
     var url = domUrl.createObjectURL(new Blob([(new XMLSerializer()).serializeToString(svg)], { type: 'image/svg+xml;charset=utf-8' }));
-    var img = new Image(1080, 1080);
-    img.onload = function () {
-        canvas.getContext('2d').drawImage(img, 0, 0);
+    var image = new Image();
+    image.onload = function () {
+        context.drawImage(image, 420, 0);
         domUrl.revokeObjectURL(url);
         download(canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
     };
-    img.src = url;
+    image.src = url;
 }
 function download(imgUri) {
     var a = document.createElement('a');
