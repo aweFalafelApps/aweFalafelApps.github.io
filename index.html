@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-        <link href="css/dark.css" rel="stylesheet" id="theme-css" />
+        <link href="styles/dark.css" rel="stylesheet" id="theme-css" />
     </head>
     <body class="mdc-typography mdc-theme--background mdc-theme--on-surface">
         <app>
@@ -47,12 +47,6 @@
             }(window.location))
         </script>
         <script src="_framework/blazor.webassembly.js"></script>
-        <script>
-            window.jsFunctions = {
-                init: function () {
-                    window.mdc.autoInit();
-                }
-            }
-        </script>
+        <script src="scripts/randomimage.js"></script>
     </body>
 </html>
