@@ -14,9 +14,24 @@
     <body class="mdc-typography mdc-theme--background mdc-theme--on-surface">
         <app>
             <div class="ri-body__full">
-                <p class="mdc-typography--subtitle1 ri-centered">Loading...</p>
+                <div class="ri-loading__shim"></div>
+                <div class="ri-loading__header">
+                    <h3 class="mdc-typography--headline3">Loading...</h3>
+                </div>
+                <div class="ri-loading__progress">
+                    <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <div class="mdc-linear-progress__bar-inner"></div>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <div class="mdc-linear-progress__bar-inner"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </app>
+
         <script type="text/javascript">
             // Single Page Apps for GitHub Pages
             // https://github.com/rafrex/spa-github-pages
@@ -46,6 +61,7 @@
                 }
             }(window.location))
         </script>
+        
         <script src="_framework/blazor.webassembly.js"></script>
         <script src="scripts/randomimage.js"></script>
     </body>

@@ -6999,10 +6999,19 @@ html, body, .ri-body__full {
   display: -webkit-flexbox;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex; }
+  display: flex;
+  flex-direction: column; }
 
-.ri-centered {
+.ri-loading__shim {
+  flex-grow: 1; }
+
+.ri-loading__header {
   margin: auto; }
+
+.ri-loading__progress {
+  flex-grow: 1;
+  margin-left: 33%;
+  margin-right: 33%; }
 
 .ri-top-app-bar {
   background-color: transparent; }
@@ -7010,3 +7019,11 @@ html, body, .ri-body__full {
 .ri-svg {
   height: 100%;
   width: 100%; }
+
+.ri-config__collapsible-toggle {
+  cursor: pointer; }
+
+.ri-config__collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out; }

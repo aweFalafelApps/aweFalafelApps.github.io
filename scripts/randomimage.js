@@ -10,11 +10,11 @@ function riSaveImage(svg, canvas) {
     image.onload = function () {
         context.drawImage(image, 420, 0);
         domUrl.revokeObjectURL(url);
-        download(canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
+        riDownload(canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
     };
     image.src = url;
 }
-function download(imgUri) {
+function riDownload(imgUri) {
     var a = document.createElement('a');
     a.setAttribute('download', 'randomimage.png');
     a.setAttribute('href', imgUri);
@@ -24,5 +24,13 @@ function download(imgUri) {
         bubbles: false,
         cancelable: true
     }));
+}
+function riToggleCollapsible(element) {
+    if (element.style.maxHeight) {
+        element.style.maxHeight = null;
+    }
+    else {
+        element.style.maxHeight = element.scrollHeight + "px";
+    }
 }
 //# sourceMappingURL=randomimage.js.map
