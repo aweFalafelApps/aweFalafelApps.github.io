@@ -7027,3 +7027,15 @@ html, body, .ri-body__full {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out; }
+
+.ri-config__color-option {
+  border-radius: 10px;
+  cursor: pointer;
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  height: 40px; }
+
+.ri-config__color-icon {
+  margin: auto; }
